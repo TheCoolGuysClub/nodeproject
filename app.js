@@ -1,4 +1,34 @@
-const argv = require("yargs").argv;
+const yargs = require('yargs');
+const argv = yargs
+.command("add", "Adds a new note", {
+  title: {
+    describe: "Title of note",
+    alias: "t",
+    demandOption: true
+  },
+  body: {
+    describe: "Body of note",
+    alias: "b",
+    demandOption: true,
+  }
+})
+.command("remove", "Remove a note", {
+  title: {
+    describe: "Title of note",
+    alias: "t",
+    demandOption: true
+  }
+})
+.command("list", "List all notes")
+.command("read", "read a note", {
+  title: {
+    describe: "Title of note",
+    alias: "t",
+    demandOption: true
+  }
+})
+.help()
+.argv;
 const notes = require("./note.js");
 const command = argv._[0]
 
