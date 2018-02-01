@@ -7,7 +7,7 @@ const argv = yargs
     demandOption: true
   },
   body: {
-    describe: "Body of note",
+    describe: "content of note",
     alias: "b",
     demandOption: true,
   }
